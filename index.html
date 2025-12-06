@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProShop | Your Online Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">ProShop</a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="cart-container">
+                <i class="fas fa-shopping-cart" id="cart-icon"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>Level Up Your Style</h1>
+                <p>Discover the latest trends in fashion and tech.</p>
+                <a href="#products" class="btn">Shop Now</a>
+            </div>
+        </section>
+
+        <section id="products" class="products-section container">
+            <h2>Featured Products</h2>
+            <div id="product-list" class="product-grid">
+                </div>
+        </section>
+
+        <section id="about" class="content-section container">
+            <h2>About Us</h2>
+            <p>ProShop is your number one source for all things tech and fashion. We're dedicated to giving you the very best of products, with a focus on quality, customer service, and uniqueness. Founded in 2025, ProShop has come a long way from its beginnings. We now serve customers all over the world and are thrilled to be a part of the fair-trade wing of the industry.</p>
+        </section>
+        
+        <section id="contact" class="content-section container">
+            <h2>Contact Us</h2>
+            <p>Have any questions? We'd love to hear from you.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Cart</h2>
+                <span class="close-button">&times;</span>
+            </div>
+            <div id="cart-items-container">
+                <p class="cart-empty">Your cart is empty.</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="btn checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Item added to cart!</div>
+
+    <footer>
+        <p>&copy; 2025 ProShop. Built for a better web.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
