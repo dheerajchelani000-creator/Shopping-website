@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #333;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --light-gray: #e9ecef;
+    --white: #fff;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    scroll-padding-top: 70px; /* Offset for the sticky header */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active { /* Style for active link */
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.cart-container {
+    position: relative;
+    cursor: pointer;
+}
+
+/* --- (Hero Section, Products Section, Modal, Toast, Footer styles remain the same) --- */
+/* (Copy all styles from the previous response for these sections) */
+.hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=2070') center/cover; height: 90vh; color: var(--white); display: flex; justify-content: center; align-items: center; text-align: center; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+.btn { display: inline-block; background: var(--primary-color); color: var(--white); padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease; }
+.btn:hover { background: #0056b3; }
+.products-section { padding: 60px 0; text-align: center; }
+.products-section h2 { font-size: 2.5rem; margin-bottom: 40px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.product-card { background: var(--white); border-radius: 10px; box-shadow: var(--box-shadow); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.product-card:hover { transform: translateY(-10px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+.product-card img { width: 100%; height: 220px; object-fit: cover; }
+.product-info { padding: 20px; text-align: left; }
+.product-info h3 { font-size: 1.3rem; margin-bottom: 10px; }
+.product-price { font-size: 1.2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 15px; }
+.add-to-cart-btn { width: 100%; background: var(--secondary-color); color: var(--white); border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 1rem; font-weight: bold; transition: background-color 0.3s; }
+.add-to-cart-btn:hover { background-color: #555; }
+.modal { display: none; position: fixed; z-index: 101; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); }
+.modal-content { background-color: var(--white); margin: 10% auto; width: 90%; max-width: 600px; border-radius: 10px; box-shadow: var(--box-shadow); display: flex; flex-direction: column; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid var(--light-gray); }
+.close-button { font-size: 1.8rem; cursor: pointer; }
+#cart-items-container { padding: 20px; max-height: 400px; overflow-y: auto; }
+.cart-item { display: flex; align-items: center; margin-bottom: 20px; }
+.cart-item img { width: 80px; height: 80px; object-fit: cover; border-radius: 5px; margin-right: 15px; }
+.cart-item-info { flex-grow: 1; }
+.quantity-controls { display: flex; align-items: center; gap: 10px; }
+.quantity-btn { border: 1px solid var(--light-gray); background: none; width: 25px; height: 25px; cursor: pointer; }
+.remove-item-btn { background: none; border: none; color: #dc3545; font-size: 1.2rem; cursor: pointer; margin-left: 20px; }
+.cart-empty { text-align: center; padding: 40px 0; color: #6c757d; }
+.modal-footer { padding: 20px; border-top: 1px solid var(--light-gray); text-align: right; }
+.modal-footer .btn { width: 100%; }
+.toast { visibility: hidden; min-width: 250px; background-color: var(--secondary-color); color: var(--white); text-align: center; border-radius: 5px; padding: 16px; position: fixed; z-index: 102; left: 50%; transform: translateX(-50%); bottom: 30px; font-size: 17px; opacity: 0; transition: opacity 0.5s, bottom 0.5s; }
+.toast.show { visibility: visible; opacity: 1; bottom: 50px; }
+footer { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 20px; margin-top: 40px; }
+
+/* --- New Content Section Styles (About/Contact) --- */
+.content-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.content-section p {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form .btn {
+    border: none;
+    cursor: pointer;
+}
